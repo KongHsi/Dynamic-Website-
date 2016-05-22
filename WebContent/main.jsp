@@ -11,16 +11,12 @@
 <p>HELLO WORLD</p>
 <p><%=new main().showMessage()%></p>
 <form action="2.jsp" method = "POST">
-	<label>User name:</label>
-	<input type="text" id="name" name="name">
-	<label>Password:</label>
-	<input type="text" id="password" name="password">
+	<label>ID1:</label>
+	<input type="text" id="ID1" name="ID1">
+	<label>ID2:</label>
+	<input type="text" id="ID2" name="ID2">
 	<button type="submit" >Submit</button>
 </form> 
-<%! main object= new main(); %>
-<p><%= object.getWebContent()[0]%> :)</p>
-<%for(int i=1;i<object.getWebContent().length;i++){ %>
-<p><%= object.getWebContent()[i]%> :)</p>
-<%} %>
+
 </body>
 </html>

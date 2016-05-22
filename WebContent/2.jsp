@@ -5,9 +5,18 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
+<%@page import ="base.*" %>
 </head>
 <body>
-	<p><%=request.getParameter("name") %></p>
-	<p><%=request.getParameter("password") %></p>
+	<p><% long ID1 = Long.parseLong(request.getParameter("ID1")); %></p>
+	<p><% long ID2 = Long.parseLong(request.getParameter("ID2")); %></p>
+	
+	<%! main object= new main(); %>
+	<p><%= object.getWebContent(ID1,ID2)[0]%> :)</p>
+	<%for(int i=1;i<object.getWebContent(ID1,ID2).length;i++){ %>
+	<p><%= object.getWebContent(ID1,ID2)[i]%> :)</p>
+	<%} %>
+	
+	
 </body>
 </html>

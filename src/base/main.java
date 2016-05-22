@@ -20,8 +20,12 @@ public class main {
 	
 
 	HttpClient httpclient = HttpClients.createDefault();
-	public String[] getWebContent() throws URISyntaxException, ClientProtocolException, IOException, ParseException, org.json.simple.parser.ParseException{
-		URIBuilder builder = new URIBuilder("http://lionwin.chinacloudapp.cn/BOP/get?id1=57898110&id2=2014261844");
+	public String[] getWebContent(long a,long b) throws URISyntaxException, ClientProtocolException, IOException, ParseException, org.json.simple.parser.ParseException{
+		URIBuilder builder = new URIBuilder("http://lionwin.chinacloudapp.cn/BOP/get");
+		//?id1=57898110&id2=2014261844
+		builder.setParameter("id1", ""+a);
+        builder.setParameter("id2", ""+b);
+
 		URI uri = builder.build();
         HttpGet request = new HttpGet(uri);
         HttpResponse response = httpclient.execute(request);
